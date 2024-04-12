@@ -2,7 +2,8 @@ version: '1'
 
 services:
   mysql:
-    image: mysql:latest
+    build:
+      dockerfile: mysql/Dockerfile
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: 1234
