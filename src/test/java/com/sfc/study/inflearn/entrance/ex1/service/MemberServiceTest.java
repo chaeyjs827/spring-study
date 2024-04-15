@@ -1,8 +1,8 @@
-package com.sfc.study.inflearn.entrance.structure.service;
+package com.sfc.study.inflearn.entrance.ex1.service;
 
-import com.sfc.study.inflearn.entrance.structure.repository.structure.domain.Member;
-import com.sfc.study.inflearn.entrance.structure.repository.structure.repository.MemoryMemberRepository;
-import com.sfc.study.inflearn.entrance.structure.repository.structure.service.MemberService;
+import com.sfc.study.inflearn.entrance.ex1.structure.domain.Member;
+import com.sfc.study.inflearn.entrance.ex1.structure.repository.MemoryMemberRepository;
+import com.sfc.study.inflearn.entrance.ex1.structure.service.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;

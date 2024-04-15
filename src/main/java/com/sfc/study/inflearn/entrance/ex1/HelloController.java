@@ -1,4 +1,4 @@
-package com.sfc.study.inflearn.entrance.structure.repository;
+package com.sfc.study.inflearn.entrance.ex1;
 
 import org.springframework.web.bind.annotation.*;
 

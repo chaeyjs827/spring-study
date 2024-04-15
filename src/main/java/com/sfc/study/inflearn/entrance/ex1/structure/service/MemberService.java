@@ -1,8 +1,8 @@
-package com.sfc.study.inflearn.entrance.structure.repository.structure.service;
+package com.sfc.study.inflearn.entrance.ex1.structure.service;
 
-import com.sfc.study.inflearn.entrance.structure.repository.structure.domain.Member;
-import com.sfc.study.inflearn.entrance.structure.repository.structure.repository.MemberRepository;
-import com.sfc.study.inflearn.entrance.structure.repository.structure.repository.MemoryMemberRepository;
+import com.sfc.study.inflearn.entrance.ex1.structure.domain.Member;
+import com.sfc.study.inflearn.entrance.ex1.structure.repository.MemberRepository;
+import com.sfc.study.inflearn.entrance.ex1.structure.repository.MemoryMemberRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
