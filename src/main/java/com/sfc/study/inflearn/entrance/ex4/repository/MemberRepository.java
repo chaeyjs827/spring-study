@@ -1,6 +1,6 @@
-package com.sfc.study.inflearn.entrance.ex1.structure.repository;
+package com.sfc.study.inflearn.entrance.ex4.repository;
 
-import com.sfc.study.inflearn.entrance.ex1.structure.domain.Member;
+import com.sfc.study.inflearn.entrance.ex4.domain.Member;
 
 import java.util.List;
 import java.util.Optional;

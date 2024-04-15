@@ -1,4 +1,4 @@
-package com.sfc.study.inflearn.entrance.ex1.structure.domain;
+package com.sfc.study.inflearn.entrance.ex4.domain;
 
 public class Member {
 

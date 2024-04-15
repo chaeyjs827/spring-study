@@ -1,7 +1,7 @@
 package com.sfc.study.inflearn.entrance.ex1;
 
-import com.sfc.study.inflearn.entrance.ex1.structure.domain.Member;
-import com.sfc.study.inflearn.entrance.ex1.structure.repository.MemoryMemberRepository;
+import com.sfc.study.inflearn.entrance.ex1.structure.domain.Ex1Member;
+import com.sfc.study.inflearn.entrance.ex1.structure.repository.Ex1MemoryEx1MemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,7 @@ import java.util.List;
 
 class Ex2MemoryEx2MemberRepositoryTest {
 
-    MemoryMemberRepository repository = new MemoryMemberRepository();
+    Ex1MemoryEx1MemberRepository repository = new Ex1MemoryEx1MemberRepository();
 
     @AfterEach
     public void afterEach() {
@@ -19,42 +19,42 @@ class Ex2MemoryEx2MemberRepositoryTest {
 
     @Test
     public void save() {
-        Member member = new Member();
-        member.setName("spring");
+        Ex1Member ex1Member = new Ex1Member();
+        ex1Member.setName("spring");
 
-        repository.save(member);
+        repository.save(ex1Member);
 
-        Member result = repository.findById(member.getId()).get();
-        Assertions.assertThat(member).isEqualTo(result);
+        Ex1Member result = repository.findById(ex1Member.getId()).get();
+        Assertions.assertThat(ex1Member).isEqualTo(result);
     }
 
     @Test
     public void findByName() {
-        Member member1 = new Member();
-        member1.setName("spring1");
-        repository.save(member1);
+        Ex1Member ex1Member1 = new Ex1Member();
+        ex1Member1.setName("spring1");
+        repository.save(ex1Member1);
 
 
-        Member member2 = new Member();
-        member2.setName("spring2");
-        repository.save(member2);
+        Ex1Member ex1Member2 = new Ex1Member();
+        ex1Member2.setName("spring2");
+        repository.save(ex1Member2);
 
-        Member result = repository.findByName("spring1").get();
+        Ex1Member result = repository.findByName("spring1").get();
 
-        Assertions.assertThat(result).isEqualTo(member1);
+        Assertions.assertThat(result).isEqualTo(ex1Member1);
     }
 
     @Test
     public void findAll() {
-        Member member1 = new Member();
-        member1.setName("spring1");
-        repository.save(member1);
+        Ex1Member ex1Member1 = new Ex1Member();
+        ex1Member1.setName("spring1");
+        repository.save(ex1Member1);
 
-        Member member2 = new Member();
-        member2.setName("spring2");
-        repository.save(member2);
+        Ex1Member ex1Member2 = new Ex1Member();
+        ex1Member2.setName("spring2");
+        repository.save(ex1Member2);
 
-        List<Member> result = repository.findAll();
+        List<Ex1Member> result = repository.findAll();
 
         Assertions.assertThat(result.size()).isEqualTo(2);
 
