@@ -1,8 +1,8 @@
 package com.sfc.study.inflearn.entrance.ex4.service;
 
 import com.sfc.study.inflearn.entrance.ex4.domain.Member;
+import com.sfc.study.inflearn.entrance.ex4.repository.JdbcTemplateMemberRepository;
 import com.sfc.study.inflearn.entrance.ex4.repository.MemberRepository;
-import com.sfc.study.inflearn.entrance.ex4.repository.MemoryMemberRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,9 +13,9 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     public MemberService(
-            MemoryMemberRepository memoryMemberRepository
+            JdbcTemplateMemberRepository jdbcTemplateMemberRepository
     ) {
-        this.memberRepository = memoryMemberRepository;
+        this.memberRepository = jdbcTemplateMemberRepository;
     }
 
     public void save(Member member) {
