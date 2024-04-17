@@ -6,10 +6,10 @@ spring:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
     username: sa
-    password: 1234
+    password: 
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
   sql:
     init:
-      mode: always
-#      schema-locations: sql/inflearn_entrance_sql.sql
+      mode: ALWAYS
+      schema-locations: classpath:sql/inflearn_entrance_sql.sql
