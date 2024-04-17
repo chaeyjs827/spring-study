@@ -1,7 +1,10 @@
 package com.sfc.study.inflearn.entrance.ex5.controller;
 
+import com.sfc.study.inflearn.entrance.ex5.domain.FlightInformation;
 import com.sfc.study.inflearn.entrance.ex5.service.FlightInformationService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/inflearn/entrance/ex5")
@@ -15,11 +18,15 @@ public class FlightInformationController {
         this.flightInformationService = flightInformationService;
     }
 
+    @PostMapping("")
+    public void save() {
+        flightInformationService.save();
+    }
+
     @GetMapping("/list")
     @ResponseBody
-    public String getFlightInformationList() {
-        flightInformationService.getFlightInformationList();
-        return null;
+    public List<FlightInformation> getFlightInformationList() {
+        return flightInformationService.getFlightInformationList();
     }
 
 

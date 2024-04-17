@@ -6,6 +6,8 @@ import com.sfc.study.inflearn.entrance.ex5.repository.FlightInformationMemoryRep
 import com.sfc.study.inflearn.entrance.ex5.repository.FlightInformationRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FlightInformationService {
 
@@ -15,8 +17,8 @@ public class FlightInformationService {
             FlightInformationJdbcRepository flightInformationJdbcRepository
             , FlightInformationMemoryRepository flightInformationMemoryRepository
     ) {
-//        this.flightInformationRepository = flightInformationJdbcRepository;
-        this.flightInformationRepository = flightInformationMemoryRepository;
+        this.flightInformationRepository = flightInformationJdbcRepository;
+//        this.flightInformationRepository = flightInformationMemoryRepository;
     }
 
     public void save() {
@@ -27,8 +29,8 @@ public class FlightInformationService {
         flightInformationRepository.save(flightInformation);
     }
 
-    public void getFlightInformationList() {
-        flightInformationRepository.getFlightList();
+    public List<FlightInformation> getFlightInformationList() {
+        return flightInformationRepository.getFlightList();
     }
 
     public void getFlight() {
