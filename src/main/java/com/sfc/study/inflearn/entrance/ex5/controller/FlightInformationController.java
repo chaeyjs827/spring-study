@@ -20,7 +20,11 @@ public class FlightInformationController {
 
     @PostMapping("")
     public void save() {
-        flightInformationService.save();
+        FlightInformation flightInformation = new FlightInformation();
+        flightInformation.setFlightNo("test1234");
+        flightInformation.setDepartureTime("2024-04-16 00:00:00");
+        flightInformation.setArrivalTime("2024-04-16 00:00:00");
+        flightInformationService.save(flightInformation);
     }
 
     @GetMapping("/list")
