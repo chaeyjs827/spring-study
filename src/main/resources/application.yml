@@ -1,0 +1,23 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb;TRACE_LEVEL_SYSTEM_OUT=1
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  sql:
+    init:
+      mode: ALWAYS
+      schema-locations: classpath:sql/inflearn_entrance_sql.sql
+
+logging:
+  level:
+    org.springframework.jdbc.core: DEBUG
