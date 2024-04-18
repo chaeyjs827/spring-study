@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class FlightInformationJdbcRepository  implements FlightInformationRepository {
@@ -36,9 +37,14 @@ public class FlightInformationJdbcRepository  implements FlightInformationReposi
     }
 
     @Override
-    public FlightInformation getFlight() {
+    public Optional<FlightInformation> getFlight(Long id) {
         System.out.println("JDBC getFlight 실행");
         return null;
+    }
+
+    @Override
+    public Optional<FlightInformation> getFlightByFlightNo(String flightNo) {
+        return Optional.empty();
     }
 
     private RowMapper<FlightInformation> flightInformationRowMapper() {

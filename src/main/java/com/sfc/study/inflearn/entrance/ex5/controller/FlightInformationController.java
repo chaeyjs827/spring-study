@@ -5,6 +5,7 @@ import com.sfc.study.inflearn.entrance.ex5.service.FlightInformationService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/inflearn/entrance/ex5")
@@ -36,8 +37,13 @@ public class FlightInformationController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public String getFlightInformation(@PathVariable String id) {
-        flightInformationService.getFlight();
-        return null;
+    public Optional<FlightInformation> getFlightInformation(@PathVariable Long id) {
+        return flightInformationService.getFlight(id);
+    }
+
+    @GetMapping("")
+    @ResponseBody
+    public Optional<FlightInformation> getFlightInformationByFlightNo(@RequestParam(required = true) String flightNo) {
+        return flightInformationService.getFlightByFlightNo(flightNo);
     }
 }

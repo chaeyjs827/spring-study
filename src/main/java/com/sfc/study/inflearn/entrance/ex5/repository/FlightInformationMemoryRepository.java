@@ -4,6 +4,7 @@ import com.sfc.study.inflearn.entrance.ex5.domain.FlightInformation;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class FlightInformationMemoryRepository implements FlightInformationRepository {
@@ -27,8 +28,13 @@ public class FlightInformationMemoryRepository implements FlightInformationRepos
     }
 
     @Override
-    public FlightInformation getFlight() {
+    public Optional<FlightInformation> getFlight(Long id) {
         System.out.println("memory getFlight 실행");
         return null;
+    }
+
+    @Override
+    public Optional<FlightInformation> getFlightByFlightNo(String flightNo) {
+        return Optional.empty();
     }
 }
