@@ -7,12 +7,12 @@ import java.util.Optional;
 
 public interface FlightInformationRepository {
 
-    void save(FlightInformation flightInformation);
+    FlightInformation save(FlightInformation flightInformation);
 
-    List<FlightInformation> getFlightList();
+    List<FlightInformation> findAll();
 
-    Optional<FlightInformation> getFlight(Long id);
+    Optional<FlightInformation> findById(Long id);
 
-    Optional<FlightInformation> getFlightByFlightNo(String flightNo);
+    Optional<FlightInformation> findByFlightNo(String flightNo);
 
 }
