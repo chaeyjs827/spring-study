@@ -1,6 +1,6 @@
 package com.sfc.study.inflearn.entrance.ex4.domain;
 
-public class Member {
+public class Ex4Member {
 
     private Long id;
     private String name;

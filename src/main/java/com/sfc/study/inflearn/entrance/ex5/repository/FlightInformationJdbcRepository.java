@@ -1,6 +1,6 @@
 package com.sfc.study.inflearn.entrance.ex5.repository;
 
-import com.sfc.study.inflearn.entrance.ex4.domain.Member;
+import com.sfc.study.inflearn.entrance.ex4.domain.Ex4Member;
 import com.sfc.study.inflearn.entrance.ex5.domain.FlightInformation;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
