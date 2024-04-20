@@ -1,16 +1,19 @@
 package com.sfc.study.inflearn.basic.core.order;
 
 import com.sfc.study.inflearn.basic.core.discount.DiscountPolicy;
-import com.sfc.study.inflearn.basic.core.discount.FixDiscountPolicy;
 import com.sfc.study.inflearn.basic.core.member.Member;
 import com.sfc.study.inflearn.basic.core.member.MemberRepository;
-import com.sfc.study.inflearn.basic.core.member.MemoryMemberRepository;
 
 public class OrderServiceImple implements OrderService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
 
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private final DiscountPolicy discountPolicy;
+
+    public  OrderServiceImple(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

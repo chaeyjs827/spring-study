@@ -1,6 +1,5 @@
 package com.sfc.study.inflearn.entrance.ex3.config;
 
-import com.sfc.study.inflearn.entrance.ex3.controller.BeanMemberController;
 import com.sfc.study.inflearn.entrance.ex3.repository.BeanMemberRepository;
 import com.sfc.study.inflearn.entrance.ex3.repository.BeanMemoryMemberRepository;
 import com.sfc.study.inflearn.entrance.ex3.service.BeanMemberService;

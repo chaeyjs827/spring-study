@@ -1,7 +1,10 @@
 package com.sfc.study.inflearn.entrance.ex5.service;
 
 import com.sfc.study.inflearn.entrance.ex5.domain.FlightInformation;
-import com.sfc.study.inflearn.entrance.ex5.repository.*;
+import com.sfc.study.inflearn.entrance.ex5.repository.FlightInformationJdbcRepository;
+import com.sfc.study.inflearn.entrance.ex5.repository.FlightInformationMemoryRepository;
+import com.sfc.study.inflearn.entrance.ex5.repository.FlightInformationRepository;
+import com.sfc.study.inflearn.entrance.ex5.repository.SpringDataJpaFlightInformationRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

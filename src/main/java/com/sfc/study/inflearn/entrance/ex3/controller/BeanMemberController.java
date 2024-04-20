@@ -1,6 +1,5 @@
 package com.sfc.study.inflearn.entrance.ex3.controller;
 
-import com.sfc.study.inflearn.entrance.ex3.repository.BeanMemberRepository;
 import com.sfc.study.inflearn.entrance.ex3.service.BeanMemberService;
 import com.sfc.study.inflearn.entrance.ex3.service.BeanServiceAnnotationService;
 import org.springframework.beans.factory.annotation.Autowired;
