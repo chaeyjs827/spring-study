@@ -1,15 +1,11 @@
 package com.sfc.study.inflearn.entrance.ex5.repository;
 
-import com.sfc.study.inflearn.entrance.ex4.domain.Member;
 import com.sfc.study.inflearn.entrance.ex5.domain.FlightInformation;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,25 +21,26 @@ public class FlightInformationJdbcRepository  implements FlightInformationReposi
     }
 
     @Override
-    public void save(FlightInformation flightInformation) {
+    public FlightInformation save(FlightInformation flightInformation) {
         String sql = "INSERT INTO flight_information (flight_no, departure_time,arrival_time) VALUES (?, ?, ?)";
         jdbcTemplate.update(sql, flightInformation.getFlightNo(), flightInformation.getDepartureTime(), flightInformation.getArrivalTime());
+        return null;
     }
 
     @Override
-    public List<FlightInformation> getFlightList() {
+    public List<FlightInformation> findAll() {
         String sql = "SELECT * FROM flight_information";
         return jdbcTemplate.query(sql, flightInformationRowMapper());
     }
 
     @Override
-    public Optional<FlightInformation> getFlight(Long id) {
+    public Optional<FlightInformation> findById(Long id) {
         System.out.println("JDBC getFlight 실행");
         return null;
     }
 
     @Override
-    public Optional<FlightInformation> getFlightByFlightNo(String flightNo) {
+    public Optional<FlightInformation> findByFlightNo(String flightNo) {
         return Optional.empty();
     }
 

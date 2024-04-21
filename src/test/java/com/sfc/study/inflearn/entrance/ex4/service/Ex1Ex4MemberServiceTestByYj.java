@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Ex1MemberServiceTestByYj {
+class Ex1Ex4MemberServiceTestByYj {
 
     @Test
     void save() {

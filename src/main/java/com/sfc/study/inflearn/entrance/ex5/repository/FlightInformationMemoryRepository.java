@@ -16,25 +16,27 @@ public class FlightInformationMemoryRepository implements FlightInformationRepos
     }
 
     @Override
-    public void save(FlightInformation flightInformation) {
+    public FlightInformation save(FlightInformation flightInformation) {
 
         System.out.println("memory save 실행");
+
+        return null;
     }
 
     @Override
-    public List<FlightInformation> getFlightList() {
+    public List<FlightInformation> findAll() {
         System.out.println("memory getFlightList 실행");
         return List.of();
     }
 
     @Override
-    public Optional<FlightInformation> getFlight(Long id) {
+    public Optional<FlightInformation> findById(Long id) {
         System.out.println("memory getFlight 실행");
         return null;
     }
 
     @Override
-    public Optional<FlightInformation> getFlightByFlightNo(String flightNo) {
+    public Optional<FlightInformation> findByFlightNo(String flightNo) {
         return Optional.empty();
     }
 }

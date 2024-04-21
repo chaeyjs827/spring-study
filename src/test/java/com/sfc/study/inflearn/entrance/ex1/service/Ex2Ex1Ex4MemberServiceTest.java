@@ -7,7 +7,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
-class Ex2Ex1MemberServiceTest {
+class Ex2Ex1Ex4MemberServiceTest {
 
     Ex1MemberService ex1MemberService = new Ex1MemberService();
     Ex1MemoryEx1MemberRepository memoryMemberRepository = new Ex1MemoryEx1MemberRepository();

@@ -25,22 +25,23 @@ public class FlightInformationJpaRepository implements FlightInformationReposito
     }
 
     @Override
-    public void save(FlightInformation flightInformation) {
+    public FlightInformation save(FlightInformation flightInformation) {
         entityManager.persist(flightInformation);
+        return null;
     }
 
     @Override
-    public List<FlightInformation> getFlightList() {
+    public List<FlightInformation> findAll() {
         return entityManager.createQuery("SELECT fi FROM FlightInformation fi", FlightInformation.class).getResultList();
     }
 
     @Override
-    public Optional<FlightInformation> getFlight(Long id) {
+    public Optional<FlightInformation> findById(Long id) {
         return Optional.ofNullable(entityManager.find(FlightInformation.class, id));
     }
 
     @Override
-    public Optional<FlightInformation> getFlightByFlightNo(String flightNo) {
+    public Optional<FlightInformation> findByFlightNo(String flightNo) {
         List<FlightInformation> result = entityManager.createQuery(
                 "SELECT fi FROM FlightInformation fi WHERE fi.flightNo = :flightNo"
                         , FlightInformation.class

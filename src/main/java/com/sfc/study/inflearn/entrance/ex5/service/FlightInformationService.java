@@ -2,9 +2,9 @@ package com.sfc.study.inflearn.entrance.ex5.service;
 
 import com.sfc.study.inflearn.entrance.ex5.domain.FlightInformation;
 import com.sfc.study.inflearn.entrance.ex5.repository.FlightInformationJdbcRepository;
-import com.sfc.study.inflearn.entrance.ex5.repository.FlightInformationJpaRepository;
 import com.sfc.study.inflearn.entrance.ex5.repository.FlightInformationMemoryRepository;
 import com.sfc.study.inflearn.entrance.ex5.repository.FlightInformationRepository;
+import com.sfc.study.inflearn.entrance.ex5.repository.SpringDataJpaFlightInformationRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -15,16 +15,16 @@ import java.util.Optional;
 @Slf4j
 public class FlightInformationService {
 
-    private FlightInformationRepository flightInformationRepository;
+    private final FlightInformationRepository flightInformationRepository;
 
     public FlightInformationService(
             FlightInformationJdbcRepository flightInformationJdbcRepository
             , FlightInformationMemoryRepository flightInformationMemoryRepository
-            , FlightInformationJpaRepository flightInformationJpaRepository
+            , SpringDataJpaFlightInformationRepository SpringDataJpaFlightInformationRepository
     ) {
 //        this.flightInformationRepository = flightInformationJdbcRepository;
 //        this.flightInformationRepository = flightInformationMemoryRepository;
-        this.flightInformationRepository = flightInformationJpaRepository;
+        this.flightInformationRepository = SpringDataJpaFlightInformationRepository;
     }
 
     public void save(FlightInformation flightInformation) {
@@ -32,15 +32,15 @@ public class FlightInformationService {
     }
 
     public List<FlightInformation> getFlightInformationList() {
-        return flightInformationRepository.getFlightList();
+        return flightInformationRepository.findAll();
     }
 
     public Optional<FlightInformation> getFlight(Long id) {
-        return flightInformationRepository.getFlight(id);
+        return flightInformationRepository.findById(id);
     }
 
     public Optional<FlightInformation> getFlightByFlightNo(String flightNo) {
-        return flightInformationRepository.getFlightByFlightNo(flightNo);
+        return flightInformationRepository.findByFlightNo(flightNo);
     }
 
 

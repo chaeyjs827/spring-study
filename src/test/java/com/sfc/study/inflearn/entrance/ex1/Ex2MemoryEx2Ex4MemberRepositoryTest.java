@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-class Ex2MemoryEx2MemberRepositoryTest {
+class Ex2MemoryEx2Ex4MemberRepositoryTest {
 
     Ex1MemoryEx1MemberRepository repository = new Ex1MemoryEx1MemberRepository();
 
