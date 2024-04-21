@@ -1,21 +1,28 @@
 package com.sfc.study.inflearn.basic.core.order;
 
+import com.sfc.study.inflearn.basic.core.AppConfig;
 import com.sfc.study.inflearn.basic.core.discount.DiscountPolicy;
 import com.sfc.study.inflearn.basic.core.discount.FixDiscountPolicy;
 import com.sfc.study.inflearn.basic.core.member.*;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderServiceTest {
+    MemberService memberService;
+    OrderService orderService;
+
+    @BeforeEach
+    public void beforeEach() {
+        AppConfig appConfig = new AppConfig();
+
+        memberService = appConfig.memberService();
+        orderService = appConfig.orderService();
+    }
 
     MemberRepository memberRepository = new MemoryMemberRepository();
-
-    MemberService memberService = new MemberServiceImple(memberRepository);
-
     DiscountPolicy discountPolicy = new FixDiscountPolicy();
-
-    OrderService orderService = new OrderServiceImple();
 
     @Test
     void createOrder() {
