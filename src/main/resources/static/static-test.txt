@@ -1,0 +1,5 @@
+HELLO WORLD!
+
+1. 정적 파일 접근 방법 예제입니다.
+    -> resources/static 경로에 파일을 넣을 경우 파일에 대해 접근이 가능합니다.
+2. ex) http://localhost:8080/static-test.txt 로 접근할 경우 페이지 이동 및 다운로드가 실행 됩니다.
