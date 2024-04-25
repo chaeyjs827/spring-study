@@ -2,7 +2,7 @@ package com.sfc.study.inflearn.basic.core.member;
 
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class MemberServiceTest {
 

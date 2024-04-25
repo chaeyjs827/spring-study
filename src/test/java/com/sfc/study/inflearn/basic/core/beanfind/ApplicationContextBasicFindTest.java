@@ -4,8 +4,6 @@ import com.sfc.study.inflearn.basic.core.AppConfig;
 import com.sfc.study.inflearn.basic.core.member.MemberService;
 import com.sfc.study.inflearn.basic.core.member.MemberServiceImple;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
