@@ -1,6 +1,5 @@
 package com.sfc.study.inflearn.basic.core.singleton;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.sfc.study.inflearn.basic.core.AppConfig;
 import com.sfc.study.inflearn.basic.core.member.MemberService;
 import org.assertj.core.api.Assertions;
