@@ -1,9 +1,10 @@
 package com.sfc.study.inflearn.basic.core.lifecycle;
 
-import org.springframework.beans.factory.DisposableBean;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.InitializingBean;
 
-public class NetworkClient implements InitializingBean, DisposableBean {
+public class NetworkClient {
 
     private String url;
 
@@ -31,17 +32,16 @@ public class NetworkClient implements InitializingBean, DisposableBean {
         System.out.println("close : " + url);
     }
 
-
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        // 의존 관계가 끝나면 주입 해주겠다는 뜻
-        System.out.println("afterPropertiesSet 실행");
+    @PostConstruct
+    public void init() {
+        System.out.println("NetworkClient init : ");
         connect();
+        call("초기화 연결 메세지");
     }
 
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("destroy 실행");
+    @PreDestroy
+    public void close() {
+        System.out.println("NetworkClient.close");
         disconnect();
     }
 }
