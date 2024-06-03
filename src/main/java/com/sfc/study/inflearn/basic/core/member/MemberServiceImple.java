@@ -1,5 +1,8 @@
 package com.sfc.study.inflearn.basic.core.member;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImple implements MemberService {
 
     private final MemberRepository memberRepository;

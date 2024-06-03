@@ -1,12 +1,10 @@
 package com.sfc.study.inflearn.basic.core.beanfind;
 
-import com.sfc.study.inflearn.basic.core.discount.DiscountPolicy;
 import com.sfc.study.inflearn.basic.core.member.MemberRepository;
 import com.sfc.study.inflearn.basic.core.member.MemoryMemberRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.matchers.Same;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;

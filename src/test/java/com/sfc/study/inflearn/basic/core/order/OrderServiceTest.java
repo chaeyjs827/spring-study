@@ -7,8 +7,6 @@ import com.sfc.study.inflearn.basic.core.member.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class OrderServiceTest {
     MemberService memberService;
     OrderService orderService;
