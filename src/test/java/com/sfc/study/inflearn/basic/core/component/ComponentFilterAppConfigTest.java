@@ -5,7 +5,6 @@ import com.sfc.study.inflearn.basic.core.scan.BeanB;
 import com.sfc.study.inflearn.basic.core.scan.filter.MyExcludeComponent;
 import com.sfc.study.inflearn.basic.core.scan.filter.MyIncludeComponent;
 import org.assertj.core.api.Assertions;
-import org.hibernate.annotations.Filter;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.ApplicationContext;
