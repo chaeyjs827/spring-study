@@ -2,7 +2,6 @@ package com.sfc.study.cqrs.post.servie;
 
 import com.sfc.study.cqrs.post.entity.Post;
 import com.sfc.study.cqrs.post.publisher.EventPublisher;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.ConcurrentHashMap;

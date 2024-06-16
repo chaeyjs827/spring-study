@@ -2,7 +2,6 @@ package com.sfc.study.inflearn.basic.core.lifecycle;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.beans.factory.InitializingBean;
 
 public class NetworkClient {
 
