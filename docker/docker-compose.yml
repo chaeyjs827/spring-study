@@ -1,4 +1,4 @@
-version: '1'
+version: '3.8'
 
 services:
   mysql:
@@ -21,39 +21,71 @@ services:
 
 
   # redis cluster set
-  redis-node1:
-    image: redis:latest
-    container_name: redis-node1
+#  redis-node1:
+#    image: redis:latest
+#    container_name: redis-node1
+#    ports:
+#      - "7000:7000"
+#    command: redis-server --port 7000 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes
+#  redis-node2:
+#    image: redis:latest
+#    container_name: redis-node2
+#    ports:
+#      - "7001:7001"
+#    command: redis-server --port 7001 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes
+#  redis-node3:
+#    image: redis:latest
+#    container_name: redis-node3
+#    ports:
+#      - "7002:7002"
+#    command: redis-server --port 7002 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes
+#  redis-node4:
+#    image: redis:latest
+#    container_name: redis-node4
+#    ports:
+#      - "7003:7003"
+#    command: redis-server --port 7003 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes
+#  redis-node5:
+#    image: redis:latest
+#    container_name: redis-node5
+#    ports:
+#      - "7004:7004"
+#    command: redis-server --port 7004 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes
+#  redis-node6:
+#    image: redis:latest
+#    container_name: redis-node6
+#    ports:
+#      - "7005:7005"
+#    command: redis-server --port 7005 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes
+
+
+  # kafka 설정
+  zookeeper:
+    container_name: zookeeper
+    image: wurstmeister/zookeeper:3.4.6
     ports:
-      - "7000:7000"
-    command: redis-server --port 7000 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes
-  redis-node2:
-    image: redis:latest
-    container_name: redis-node2
+      - "2181:2181"
+
+  kafka:
+    container_name: kafka
+    image: wurstmeister/kafka:2.13-2.7.0
     ports:
-      - "7001:7001"
-    command: redis-server --port 7001 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes
-  redis-node3:
-    image: redis:latest
-    container_name: redis-node3
+      - "9094:9094"
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: INTERNAL://0.0.0.0:9092,OUTSIDE://0.0.0.0:9094
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:9092,OUTSIDE://localhost:9094
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/kafka-logs:/kafka/kafka-logs
+
+
+  kafka-manager:
+    container_name: kafka-manager
+    image: hlebalbau/kafka-manager:latest
     ports:
-      - "7002:7002"
-    command: redis-server --port 7002 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes
-  redis-node4:
-    image: redis:latest
-    container_name: redis-node4
-    ports:
-      - "7003:7003"
-    command: redis-server --port 7003 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes
-  redis-node5:
-    image: redis:latest
-    container_name: redis-node5
-    ports:
-      - "7004:7004"
-    command: redis-server --port 7004 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes
-  redis-node6:
-    image: redis:latest
-    container_name: redis-node6
-    ports:
-      - "7005:7005"
-    command: redis-server --port 7005 --cluster-enabled yes --cluster-config-file nodes.conf --cluster-node-timeout 5000 --appendonly yes
+      - "9000:9000"
+    environment:
+      ZK_HOSTS: zookeeper:2181
