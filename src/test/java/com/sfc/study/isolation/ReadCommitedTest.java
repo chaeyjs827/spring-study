@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootTest
-public class ReadCommited {
+public class ReadCommitedTest {
 
     private static Map<String, Integer> database = new HashMap<>();
 

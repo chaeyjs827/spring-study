@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootTest
-public class RepeatableRead {
+public class RepeatableReadTest {
 
     private static Map<String, Integer> database = new HashMap<>();
 
