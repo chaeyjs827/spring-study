@@ -78,6 +78,10 @@ public class JpaEx1 {
         log.info("[processFlight] getId 삭제 후 조회");
         FlightInformation persistedFlight3 = entityManager.find(FlightInformation.class, insertedId); // 영속성 콘텍스트가 이미 알고 있어 따로 조회 x
         FlightInformation persistedFlight4 = entityManager.find(FlightInformation.class, 2L); // 영속성 콘텍스트에 없으니 db 조회
+
+        // 영속성 컨텍스트에서 관리되는 객체는 데이터에 수정이 포착되면 commit 될 때 update 문이 자동으로 실행됩니다.
+        persistedFlight4.setFlightNo("test123123");
+
         log.info("[processFlight] getId 삭제 후 조회 종료");
 
         // 트랜잭션이 commit되는 시점에 실제 delete 쿼리가 실행됩니다.
